@@ -1,8 +1,12 @@
-/*drop table Plat;
-drop table LiniaEscandall;
-drop table Categoria;
-drop table Unitat;
-drop table Ingredient;
+/*drop table Liniacomanda;
+drop table comanda;
+drop table taula;
+drop table cambrer;
+drop table liniaescandall;
+drop table plat;
+drop table categoria;
+drop table unitat;
+drop table ingredient;
 */
 create table if not exists Ingredient(
 codi INT,
@@ -42,8 +46,6 @@ preu float(2,2),
 foto Blob,
 disponible bool,
 categoria INT,
-escandall INT,
-constraint FK_PLAT_LINIA foreign key(escandall) references LiniaEscandall(id),
 primary key(codi),
 constraint FK_PLAT_CATEGORIA foreign key(categoria) references Categoria(codi)
 );
@@ -70,6 +72,7 @@ create table if not exists LiniaComanda(
 comanda INT,
 num INT,
 quantitat int,
+estat enum('EN_PREPARACIO', 'PREPARADA'),
 constraint primary key(comanda, num),
 constraint FK_LINIACOMANDA_COMANDA foreign key(comanda) references Comanda(codi)
 );
@@ -78,3 +81,6 @@ create table if not exists Taula(
 numero INT,
 constraint primary key(numero)
 );
+
+alter table comanda add column taula INT;
+alter table comanda add constraint FK_COMANDA_TAULA foreign key(taula) references Taula(numero); 
