@@ -6,8 +6,8 @@ drop table liniaescandall;
 drop table plat;
 drop table categoria;
 drop table unitat;
-drop table ingredient;
-*/
+drop table ingredient;*/
+
 create table if not exists Ingredient(
 codi INT,
 nom varchar(30),
@@ -23,7 +23,7 @@ primary key(codi)
 create table if not exists Categoria(
 codi INT,
 nom varchar(30),
-color varchar(6),
+color varchar(7),
 primary key(codi)
 );
 
@@ -42,8 +42,8 @@ create table if not exists Plat(
 codi INT,
 nom varchar(50),
 descripcioMD varchar(150),
-preu float(2,2),
-foto Blob,
+preu float(4,2),
+foto longblob,
 disponible bool,
 categoria INT,
 primary key(codi),
