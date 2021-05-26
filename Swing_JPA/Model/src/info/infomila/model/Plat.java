@@ -24,6 +24,8 @@ import javax.persistence.OneToMany;
 public class Plat implements Serializable {
      @Id
      private long codi;
+     @Basic(optional = false)
+     private String nom;
      @Basic(optional = false)  
      private String descripcioMD;
      @Basic(optional = false)
@@ -46,6 +48,16 @@ public class Plat implements Serializable {
         this.codi = codi;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    
+    
     public String getDescripcioMD() {
         return descripcioMD;
     }
@@ -114,7 +126,7 @@ public class Plat implements Serializable {
     @Override
     public String toString() {
         return "Plat{" + "codi=" + codi + ", descripcioMD=" + descripcioMD + 
-                ", preu=" + preu + ", disponible=" + disponible + ", categoria=" + categoria + ", escandall=" + escandall + '}';
+                ", preu=" + preu + ", disponible=" + disponible + ", categoria=" + categoria + '}';
     }
      
      

@@ -16,14 +16,13 @@ import javax.persistence.Id;
  * @author averd
  */
 @Entity
-
 public class Categoria implements Serializable {
     @Id
     private long codi;
     @Basic(optional = false)
     private String nom;
     @Basic(optional = false)
-    private Color color;
+    private String color;
     
     protected Categoria(){}
 
@@ -43,11 +42,11 @@ public class Categoria implements Serializable {
         this.nom = nom;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
