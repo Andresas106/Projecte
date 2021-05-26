@@ -7,13 +7,16 @@ package info.infomila.GestioEscandallHibernate;
 
 import info.infomila.model.Categoria;
 import info.infomila.model.Ingredient;
+import info.infomila.model.LiniaEscandall;
 import info.infomila.model.Plat;
 import info.infomila.model.Unitat;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.TrayIcon.MessageType;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -46,6 +49,7 @@ import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
@@ -64,6 +68,11 @@ import javax.swing.table.TableModel;
 public class GestioEscandall {
 
     JDialog dialog;
+    Ingredient ingSelected = null;
+    int rowSelected = -1;
+    int numLinia;
+    Unitat unitSelected = null;
+    LiniaEscandall LiniaEscandallSelected = null;
     Integer eleccioRadioButton = -1;
     String eleccioCombo = "";
     DefaultListModel modelList = new DefaultListModel();
@@ -180,7 +189,7 @@ public class GestioEscandall {
                             dialog = new JDialog(frame, "Editar escandall plat " + plat.getNom(), true);
                             dialog.setSize(new Dimension(700, 350));
                             
-                            colocarObjectesJDialog();
+                            colocarObjectesJDialog(plat);
                             
                             dialog.setVisible(true);
                         }
@@ -249,11 +258,18 @@ public class GestioEscandall {
         }
     }
     
-    public void colocarObjectesJDialog()
+    public void colocarObjectesJDialog(Plat plat)
     {
         JPanel esquerra = new JPanel();
         esquerra.setLayout(new BoxLayout(esquerra, BoxLayout.Y_AXIS));
-        DefaultTableModel model = new DefaultTableModel();
+        DefaultTableModel model = new DefaultTableModel()        
+        {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+            //all cells false
+                return false;
+    }
+        };
         JTable liniesEscandallTaula = new JTable(model);
         DefaultListModel modelIngredients = new DefaultListModel();
         DefaultListModel modelUnitats = new DefaultListModel();
@@ -263,6 +279,39 @@ public class GestioEscandall {
         {
             model.addColumn(columnes[i]); 
         }
+
+        liniesEscandallTaula.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent arg0){
+                
+                rowSelected = liniesEscandallTaula.getSelectedRow(); 
+                if(rowSelected != -1){
+                    numLinia = (int) model.getValueAt(rowSelected, 0);
+
+                    String consulta = "select le from LiniaEscandall le where le.plat=:plat and le.num=:num";
+                    Query q = em.createQuery(consulta);
+                    q.setParameter("plat", plat);
+                    q.setParameter("num", numLinia);
+
+                    LiniaEscandallSelected = (LiniaEscandall) q.getSingleResult();
+                }
+            }
+        }); 
+        
+        
+        String consulta = "select le from LiniaEscandall le where le.plat=:plat";
+        Query q = em.createQuery(consulta);
+        q.setParameter("plat", plat);
+        List<LiniaEscandall> liniaEscandallRes = q.getResultList();
+        
+        for(int i=0;i<liniaEscandallRes.size();i++)
+        {
+            Object[] object = new Object[]{liniaEscandallRes.get(i).getNum(),liniaEscandallRes.get(i).getQuantitat(),
+                                           liniaEscandallRes.get(i).getUnitat().getCodi(),
+                                           liniaEscandallRes.get(i).getIngredient().getCodi()};
+            model.addRow(object);
+        }
+        
         
         JScrollPane scroll = new JScrollPane(liniesEscandallTaula,
                 JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -273,7 +322,73 @@ public class GestioEscandall {
         esquerraSud.setLayout(new BoxLayout(esquerraSud, BoxLayout.X_AXIS)); 
         
         JButton afegir = new JButton("Afegir");
+        
+        afegir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                
+                String consulta = "select le from LiniaEscandall le where le.plat=:plat";
+                Query q = em.createQuery(consulta);
+                q.setParameter("plat", plat);
+                List<LiniaEscandall> Linies = q.getResultList();
+                int numLinies = Linies.size();
+                
+                if(ingSelected != null && unitSelected!=null){
+
+                    String m = null;
+                    do{
+                     m = JOptionPane.showInputDialog("Inserint linia amb Ingredient "
+                            + ingSelected.getCodi() + " i Unitat " + unitSelected.getCodi() + "\n" + "Indica quantitat");
+                    }while( m!= null && !m.matches("^[1-9][0-9]*$"));
+                    if(m != null)
+                    {
+                        em.getTransaction().begin();
+                        int quantitat = Integer.parseInt(m);
+                        LiniaEscandall le = new LiniaEscandall(plat.getCodi(), numLinies+1, quantitat, ingSelected, unitSelected);
+                        em.persist(le);
+                        Object[] o = new Object[]{numLinies+1, quantitat, unitSelected.getCodi(), ingSelected.getCodi()};
+                        model.addRow(o);
+                        em.getTransaction().commit();
+                    }
+                }
+                
+                
+                
+            }
+        });
+        
         JButton eliminar = new JButton("Eliminar");
+        
+        eliminar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                if(LiniaEscandallSelected != null && rowSelected != -1)
+                {
+                    String consulta = "select le from LiniaEscandall le where le.plat=:plat and le.num=:num";
+                    Query q= em.createQuery(consulta);
+                    q.setParameter("plat", plat);
+                    q.setParameter("num", LiniaEscandallSelected.getNum());
+                    List<LiniaEscandall> liniaEscandall = q.getResultList();
+                    if(liniaEscandall.size() == 1)
+                    {
+
+
+                            int input = JOptionPane.showConfirmDialog(dialog, "Segur que vols eliminar la linia "
+                                    + LiniaEscandallSelected.getNum(), "Eliminar Linia Escandall", JOptionPane.YES_NO_OPTION);
+                        if(input == 0)
+                        {
+                            em.getTransaction().begin();
+                            
+                            em.remove(liniaEscandall.get(0));  
+                            
+                            model.removeRow(rowSelected);  
+                            
+                            em.getTransaction().commit();
+                        }
+                    }
+                }
+            }
+        });
         
         esquerraSud.add(afegir);
         esquerraSud.add(eliminar);
@@ -303,8 +418,8 @@ public class GestioEscandall {
                 JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         dreta.add(scroll);
         
-        String consulta = "select i from Ingredient i";
-        Query q = em.createQuery(consulta);
+        consulta = "select i from Ingredient i";
+        q = em.createQuery(consulta);
         List<Ingredient> ingredientsres = q.getResultList();
         
         for(int i=0;i<ingredientsres.size();i++)
@@ -322,6 +437,22 @@ public class GestioEscandall {
         {
             modelUnitats.addElement(unitatsres.get(i)); 
         }
+        
+        ingredients.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent arg0) {
+                JList listIng= (JList) arg0.getSource();
+                ingSelected = (Ingredient) listIng.getSelectedValue();
+            }
+        });
+        
+        unitats.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent arg0) {
+                JList listUnit = (JList) arg0.getSource();
+                unitSelected = (Unitat) listUnit.getSelectedValue();
+            }
+        });
         
         dialog.add(dreta);
         

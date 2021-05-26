@@ -46,6 +46,15 @@ public class LiniaEscandall implements Serializable {
     private Ingredient ingredient;
     
     protected LiniaEscandall(){}
+    
+    public LiniaEscandall(long platId, int num, int quantitat, Ingredient ing, Unitat unit)
+    {
+        this.platId = platId;
+        this.num = num;
+        this.quantitat = quantitat;
+        this.ingredient = ing;
+        this.unitat = unit;
+    }
 
     public Plat getPlat() {
         return plat;
