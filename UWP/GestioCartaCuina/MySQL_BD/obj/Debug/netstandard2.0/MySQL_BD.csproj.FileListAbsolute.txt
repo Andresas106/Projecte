@@ -1,0 +1,9 @@
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\MySQL_BD\bin\Debug\netstandard2.0\MySQL_BD.deps.json
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\MySQL_BD\bin\Debug\netstandard2.0\MySQL_BD.dll
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\MySQL_BD\obj\Debug\netstandard2.0\MySQL_BD.csprojAssemblyReference.cache
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\MySQL_BD\obj\Debug\netstandard2.0\MySQL_BD.AssemblyInfoInputs.cache
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\MySQL_BD\obj\Debug\netstandard2.0\MySQL_BD.AssemblyInfo.cs
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\MySQL_BD\bin\Debug\netstandard2.0\MySQL_BD.pdb
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\MySQL_BD\obj\Debug\netstandard2.0\MySQL_BD.csproj.CoreCompileInputs.cache
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\MySQL_BD\obj\Debug\netstandard2.0\MySQL_BD.dll
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\MySQL_BD\obj\Debug\netstandard2.0\MySQL_BD.pdb
