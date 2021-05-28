@@ -4,9 +4,9 @@ using System.Data;
 using System.Data.Common;
 using System.Text;
 
-namespace SakilaDB
+namespace MySQL_BD 
 {
-    class DBUtils
+    public class DBUtils
     {
         public static void crearParametre(DbCommand consulta, String nom, DbType type, object valor)
         {
@@ -16,5 +16,6 @@ namespace SakilaDB
             p.Value = valor;
             consulta.Parameters.Add(p);
         }
+
     }
 }

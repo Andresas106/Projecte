@@ -1,4 +1,4 @@
-/*drop table Liniacomanda;
+drop table Liniacomanda;
 drop table comanda;
 drop table taula;
 drop table cambrer;
@@ -6,7 +6,7 @@ drop table liniaescandall;
 drop table plat;
 drop table categoria;
 drop table unitat;
-drop table ingredient;*/
+drop table ingredient;
 
 create table if not exists Ingredient(
 codi INT,
@@ -72,9 +72,11 @@ create table if not exists LiniaComanda(
 comanda INT,
 num INT,
 quantitat int,
-estat enum('EN_PREPARACIO', 'PREPARADA'),
+preparat bool,
+item INT,
 constraint primary key(comanda, num),
-constraint FK_LINIACOMANDA_COMANDA foreign key(comanda) references Comanda(codi)
+constraint FK_LINIACOMANDA_COMANDA foreign key(comanda) references Comanda(codi),
+constraint FK_LINIACOMANDA_PLAT foreign key(item) references Plat(codi)
 );
 
 create table if not exists Taula(

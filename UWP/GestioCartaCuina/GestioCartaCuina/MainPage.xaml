@@ -6,28 +6,44 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+        <SplitView x:Name="NavigationPane" DisplayMode="CompactInline">
+            <SplitView.Pane>
+                <Grid Background="Gray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="44" />
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="HamburgerButton" Grid.Row="0" Style="{StaticResource MenuItemButtonStyle}" Tag="&#xE700;" Click="HamburgerButton_Click" />
+                    <StackPanel x:Name="NavigationMenu" Orientation="Vertical" Grid.Row="1">
+                        <RadioButton x:Name="Option1"
+           GroupName="Group1"
+           Style="{StaticResource NavigationButtonStyle}"
+           Tag="&#xE8A9;"
+           Checked="Option1Button_Checked"
+           Content="Carta" 
+           />
+                        <RadioButton x:Name="Option2"
+           GroupName="Group1"
+           Style="{StaticResource NavigationButtonStyle}"
+           Tag="&#xF83E;"
+           Checked="Option2Button_Checked"
+           Content="Cuina"
+           />
+                    </StackPanel>
 
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="Categoria" FontSize="35"></TextBlock>
-            <ListView x:Name="lstCategoria">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
+                </Grid>
 
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackPanel>
-        
+            </SplitView.Pane>
+            <SplitView.Content>
+
+                <Frame x:Name="frmPrincipal">
+                </Frame>
+
+            </SplitView.Content>
+        </SplitView>
     </Grid>
 </Page>

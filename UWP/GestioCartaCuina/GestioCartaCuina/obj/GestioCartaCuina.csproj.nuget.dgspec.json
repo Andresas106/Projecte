@@ -22,14 +22,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "uap10.0.16299"
+          "uap10.0.17763"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "uap10.0.16299": {
+          "uap10.0.17763": {
             "projectReferences": {
               "C:\\Users\\averd\\OneDrive\\Escritorio\\ProjecteDAM\\UWP\\GestioCartaCuina\\MySQL_BD\\MySQL_BD.csproj": {
                 "projectPath": "C:\\Users\\averd\\OneDrive\\Escritorio\\ProjecteDAM\\UWP\\GestioCartaCuina\\MySQL_BD\\MySQL_BD.csproj"
@@ -39,11 +39,23 @@
         }
       },
       "frameworks": {
-        "uap10.0.16299": {
+        "uap10.0.17763": {
           "dependencies": {
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",
               "version": "[6.2.10, )"
+            },
+            "Microsoft.Toolkit.Uwp.UI.Controls": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.Toolkit.Uwp.UI.Controls.Markdown": {
+              "target": "Package",
+              "version": "[7.0.2, )"
             }
           },
           "imports": [

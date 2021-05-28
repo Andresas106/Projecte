@@ -1,0 +1,30 @@
+﻿<UserControl
+    x:Class="GestioCartaCuina.ControlsPersonalitzats.PlatUI"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GestioCartaCuina.ControlsPersonalitzats"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    x:Name="UI_Plats">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding ElementName=UI_Plats, Path=plat.Codi}"></TextBlock>
+                <TextBlock Text="{Binding ElementName=UI_Plats, Path=plat.Nom}" Margin="50 0 0 0"></TextBlock>
+            </StackPanel>
+            <controls:MarkdownTextBlock Text="{Binding ElementName=UI_Plats, Path=plat.DescripcioMD}" Margin="50 0 0 0"></controls:MarkdownTextBlock>
+            <Image Source="{Binding ElementName=UI_Plats, Path=plat.ImatgeSource}"
+                   Width="250" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   ></Image>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding ElementName=UI_Plats, Path=plat.Preu}"></TextBlock>
+                <TextBlock Text="Esta disponible?" Margin="40 0 0 0"></TextBlock>
+                <TextBlock Text="{Binding ElementName=UI_Plats, Path=plat.Disponible}"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

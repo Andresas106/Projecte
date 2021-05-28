@@ -7,6 +7,10 @@ Assets\Square44x44Logo.targetsize-24_altform-unplated.png
 Assets\StoreLogo.png
 Assets\Wide310x150Logo.scale-200.png
 App.xbf
+ControlsPersonalitzats\PlatUI.xbf
 GestioCartaCuina.xr.xml
 MainPage.xbf
+Themes\Generic.xbf
+View\GestioCarta.xbf
+View\GestioCuina.xbf
 Properties\Default.rd.xml

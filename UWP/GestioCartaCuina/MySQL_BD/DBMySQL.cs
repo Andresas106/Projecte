@@ -10,7 +10,7 @@ namespace MySQL_BD
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("Server=localhost;Database=practica;UID=root;Password=");
+            optionsBuilder.UseMySQL("Server=localhost;Database=projecte;UID=root;Password=");
         }
     }
 }

@@ -38,7 +38,7 @@ namespace MySQL_BD
                         using (var consulta = connexio.CreateCommand())
                         {
                             //definir la consulta de teams
-                            consulta.CommandText = "select codi, nom, color from categoria";
+                            consulta.CommandText = "select c.codi, c.nom, c.color from Categoria c";
 
                             DbDataReader reader = consulta.ExecuteReader();
 

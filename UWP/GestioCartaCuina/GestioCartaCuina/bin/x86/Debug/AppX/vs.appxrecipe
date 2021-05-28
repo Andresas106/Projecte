@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>5bab4b9b-e6cd-4887-8acc-fae1a3806a16</PackageIdentityName>
     <PackageIdentityPublisher>CN=averd</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>54C7FECE17184E92EAB703D6E09ACA5189ADDF48F2793744A4BB4F4BA2A0C351</RegisteredManifestChecksum>
+    <LayoutDir>C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>04717E01A16938EA5367F7EA6538B50BB36846BB9C6EF438FBF243589D6BE253</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>5bab4b9b-e6cd-4887-8acc-fae1a3806a16_1.0.0.0_x86__c3yes314ep0e8</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>5bab4b9b-e6cd-4887-8acc-fae1a3806a16_c3yes314ep0e8!App</RegisteredUserModeAppID>
     <RegisteredPackageID>5bab4b9b-e6cd-4887-8acc-fae1a3806a16</RegisteredPackageID>
@@ -27,20 +27,28 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-05-26T23:40:26.304</Modified>
+      <Modified>2021-05-28T01:59:02.561</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\GestioCartaCuina.exe">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\GestioCartaCuina.exe">
       <PackagePath>entrypoint\GestioCartaCuina.exe</PackagePath>
-      <Modified>2021-05-26T23:40:25.455</Modified>
+      <Modified>2021-05-28T01:58:59.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
       <Modified>2018-05-28T14:12:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
+      <PackagePath>ColorCode.Core.dll</PackagePath>
+      <Modified>2018-10-05T21:30:08.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\colorcode.uwp\2.0.6\lib\uap10.0\ColorCode.UWP.dll">
+      <PackagePath>ColorCode.UWP.dll</PackagePath>
+      <Modified>2018-10-05T21:30:16.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\google.protobuf\3.11.4\lib\netstandard2.0\Google.Protobuf.dll">
       <PackagePath>Google.Protobuf.dll</PackagePath>
@@ -58,9 +66,9 @@
       <PackagePath>K4os.Hash.xxHash.dll</PackagePath>
       <Modified>2019-07-03T18:39:02.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.bcl.asyncinterfaces\1.1.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.bcl.asyncinterfaces\5.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
       <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
-      <Modified>2019-11-15T07:36:44.000</Modified>
+      <Modified>2020-10-19T16:40:26.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.bcl.hashcode\1.1.0\lib\netstandard2.0\Microsoft.Bcl.HashCode.dll">
       <PackagePath>Microsoft.Bcl.HashCode.dll</PackagePath>
@@ -122,6 +130,46 @@
       <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
       <Modified>2019-12-14T17:39:30.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit\7.0.2\lib\netstandard2.0\Microsoft.Toolkit.dll">
+      <PackagePath>Microsoft.Toolkit.dll</PackagePath>
+      <Modified>2021-05-12T05:41:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.dll</PackagePath>
+      <Modified>2021-05-12T05:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.dll</PackagePath>
+      <Modified>2021-05-12T05:41:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.core\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Core.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Core.dll</PackagePath>
+      <Modified>2021-05-12T05:41:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll</PackagePath>
+      <Modified>2021-05-12T05:41:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.input\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Input.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Input.dll</PackagePath>
+      <Modified>2021-05-12T05:41:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.layout\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Layout.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Layout.dll</PackagePath>
+      <Modified>2021-05-12T05:41:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.markdown\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Markdown.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Markdown.dll</PackagePath>
+      <Modified>2021-05-12T05:41:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.media\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Media.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Media.dll</PackagePath>
+      <Modified>2021-05-12T05:41:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.primitives\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Primitives.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Primitives.dll</PackagePath>
+      <Modified>2021-05-12T05:41:56.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\mysql.data\8.0.22\lib\netstandard2.0\MySql.Data.dll">
       <PackagePath>MySql.Data.dll</PackagePath>
       <Modified>2020-09-18T16:21:54.000</Modified>
@@ -162,9 +210,9 @@
       <PackagePath>System.Diagnostics.DiagnosticSource.dll</PackagePath>
       <Modified>2019-11-15T07:54:44.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\system.runtime.compilerservices.unsafe\4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\system.runtime.compilerservices.unsafe\5.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
       <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
-      <Modified>2019-11-15T07:37:58.000</Modified>
+      <Modified>2020-10-19T16:46:44.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\system.security.cryptography.protecteddata\4.4.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll">
       <PackagePath>System.Security.Cryptography.ProtectedData.dll</PackagePath>
@@ -174,82 +222,191 @@
       <PackagePath>System.Security.Permissions.dll</PackagePath>
       <Modified>2019-11-15T07:37:44.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\system.text.encodings.web\5.0.1\lib\netstandard2.0\System.Text.Encodings.Web.dll">
+      <PackagePath>System.Text.Encodings.Web.dll</PackagePath>
+      <Modified>2021-02-16T20:53:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\system.text.json\5.0.2\lib\netstandard2.0\System.Text.Json.dll">
+      <PackagePath>System.Text.Json.dll</PackagePath>
+      <Modified>2021-03-16T21:34:16.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\system.xml.xpath.xmldocument\4.0.1\lib\netstandard1.3\System.Xml.XPath.XmlDocument.dll">
       <PackagePath>System.Xml.XPath.XmlDocument.dll</PackagePath>
       <Modified>2016-06-11T21:15:02.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\MySQL_BD\bin\Debug\netstandard2.0\MySQL_BD.dll">
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\win2d.uwp\1.25.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
+      <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
+      <Modified>2020-04-02T17:44:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\MySQL_BD\bin\Debug\netstandard2.0\MySQL_BD.dll">
       <PackagePath>MySQL_BD.dll</PackagePath>
-      <Modified>2021-05-26T23:37:49.282</Modified>
+      <Modified>2021-05-28T01:55:04.005</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\win2d.uwp\1.25.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
+      <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
+      <Modified>2020-04-02T17:44:36.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2019-03-18T16:36:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.core\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Core\Microsoft.Toolkit.Uwp.UI.Controls.Core.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Core\Microsoft.Toolkit.Uwp.UI.Controls.Core.xr.xml</PackagePath>
+      <Modified>2021-05-12T05:25:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.DataGrid\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.xr.xml</PackagePath>
+      <Modified>2021-05-12T05:20:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.input\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Input\Microsoft.Toolkit.Uwp.UI.Controls.Input.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Input\Microsoft.Toolkit.Uwp.UI.Controls.Input.xr.xml</PackagePath>
+      <Modified>2021-05-12T05:25:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.layout\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Layout\Microsoft.Toolkit.Uwp.UI.Controls.Layout.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Layout\Microsoft.Toolkit.Uwp.UI.Controls.Layout.xr.xml</PackagePath>
+      <Modified>2021-05-12T05:24:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.markdown\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Markdown\Microsoft.Toolkit.Uwp.UI.Controls.Markdown.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Markdown\Microsoft.Toolkit.Uwp.UI.Controls.Markdown.xr.xml</PackagePath>
+      <Modified>2021-05-12T05:25:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.toolkit.uwp.ui.controls.media\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Media\Microsoft.Toolkit.Uwp.UI.Controls.Media.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Media\Microsoft.Toolkit.Uwp.UI.Controls.Media.xr.xml</PackagePath>
+      <Modified>2021-05-12T05:25:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2021-05-26T19:45:10.863</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2020-09-22T15:31:57.453</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-09-22T15:31:57.460</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-09-22T15:31:57.461</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-09-22T15:31:57.462</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-09-22T15:31:57.464</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-09-22T15:31:57.465</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-09-22T15:31:57.467</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\GestioCartaCuina.xr.xml">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\GestioCartaCuina.xr.xml">
       <PackagePath>GestioCartaCuina.xr.xml</PackagePath>
-      <Modified>2021-05-26T23:38:04.942</Modified>
+      <Modified>2021-05-28T01:57:59.320</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-05-26T23:38:05.052</Modified>
+      <Modified>2021-05-28T01:58:58.732</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\ControlsPersonalitzats\PlatUI.xbf">
+      <PackagePath>ControlsPersonalitzats\PlatUI.xbf</PackagePath>
+      <Modified>2021-05-28T01:58:58.732</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-05-26T23:40:25.249</Modified>
+      <Modified>2021-05-28T01:58:58.732</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\Themes\Generic.xbf">
+      <PackagePath>Themes\Generic.xbf</PackagePath>
+      <Modified>2021-05-28T01:58:58.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\View\GestioCarta.xbf">
+      <PackagePath>View\GestioCarta.xbf</PackagePath>
+      <Modified>2021-05-28T01:58:58.732</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\View\GestioCuina.xbf">
+      <PackagePath>View\GestioCuina.xbf</PackagePath>
+      <Modified>2021-05-28T01:58:58.732</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
+      <PackagePath>ucrtbased.dll</PackagePath>
+      <Modified>2019-03-18T16:43:58.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2019-03-18T15:33:42.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\resources.pri">
-      <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-05-26T23:38:08.896</Modified>
+    <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\microsoft.ui.xaml\2.5.0\buildTransitive\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">
+      <PackagePath>WinMetadata\Microsoft.UI.Xaml.winmd</PackagePath>
+      <Modified>2020-12-03T08:46:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\Core\GestioCartaCuina.exe">
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2021-05-28T01:58:01.657</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\Core\GestioCartaCuina.exe">
       <PackagePath>GestioCartaCuina.exe</PackagePath>
-      <Modified>2021-05-26T23:40:26.296</Modified>
+      <Modified>2021-05-28T01:59:02.553</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
+    <ResolvedSDKReference Include="C:\Users\averd\.nuget\packages\microsoft.ui.xaml\2.5.0\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.5.appx">
+      <Name>Microsoft.UI.Xaml.2.5</Name>
+      <Version>2.52012.2002.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.5, MinVersion = 2.52012.2002.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\averd\.nuget\packages\microsoft.ui.xaml\2.5.0\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.5.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\averd\.nuget\packages\microsoft.ui.xaml\2.5.0\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.5.appx">
+      <Name>Microsoft.UI.Xaml.2.5</Name>
+      <Version>2.52012.2002.0</Version>
+      <Architecture>Win32</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.5, MinVersion = 2.52012.2002.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\averd\.nuget\packages\microsoft.ui.xaml\2.5.0\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.5.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\averd\.nuget\packages\microsoft.ui.xaml\2.5.0\buildTransitive\..\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.5.appx">
+      <Name>Microsoft.UI.Xaml.2.5</Name>
+      <Version>2.52012.2002.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.5, MinVersion = 2.52012.2002.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\averd\.nuget\packages\microsoft.ui.xaml\2.5.0\buildTransitive\..\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.5.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\averd\.nuget\packages\microsoft.ui.xaml\2.5.0\buildTransitive\..\tools\AppX\arm\Release\Microsoft.UI.Xaml.2.5.appx">
+      <Name>Microsoft.UI.Xaml.2.5</Name>
+      <Version>2.52012.2002.0</Version>
+      <Architecture>arm</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.5, MinVersion = 2.52012.2002.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\averd\.nuget\packages\microsoft.ui.xaml\2.5.0\buildTransitive\..\tools\AppX\arm\Release\Microsoft.UI.Xaml.2.5.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\averd\.nuget\packages\microsoft.ui.xaml\2.5.0\buildTransitive\..\tools\AppX\arm64\Release\Microsoft.UI.Xaml.2.5.appx">
+      <Name>Microsoft.UI.Xaml.2.5</Name>
+      <Version>2.52012.2002.0</Version>
+      <Architecture>arm64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.5, MinVersion = 2.52012.2002.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\averd\.nuget\packages\microsoft.ui.xaml\2.5.0\buildTransitive\..\tools\AppX\arm64\Release\Microsoft.UI.Xaml.2.5.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\2.2.10\build\..\tools\Appx\Microsoft.NET.CoreRuntime.2.2.appx">
       <Name>Microsoft.NET.CoreRuntime.2.2</Name>
       <Version>2.2.27902.3</Version>

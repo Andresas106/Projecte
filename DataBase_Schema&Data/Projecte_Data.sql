@@ -36,9 +36,27 @@ insert into plat values(1, 'Pizza 4 Stagioni',
 load_file('C:/Users/averd/OneDrive/Escritorio/pizza_4_stagionni.jpg'), 1, 1);
 
 insert into plat values(2, 'Pizza Al Parmigiano', 
-null, '20',
+'Pizza de 4 estacions en la que en cada porcio trobem ingredients de cada estacio del any', '20',
 load_file('C:/Users/averd/OneDrive/Escritorio/pizza_alparmigiano.jpg'), 1, 1);
 
 insert into plat values(3, 'Pizza Bianca di Foie', 
-null, '18.75',
+'Pizza de 4 estacions en la que en cada porcio trobem ingredients de cada estacio del any', '18.75',
 load_file('C:/Users/averd/OneDrive/Escritorio/pizza_bianca_di_foie.jpg'), 1, 1);
+
+/*insert into plat values(4, 'Inventat', 'Inventat total', '19.70', null, 0, 2);*/
+
+/*Taula Taula*/
+insert into taula values(1);
+insert into taula values(2);
+insert into taula values(3);
+insert into taula values(4);
+insert into taula values(5);
+insert into taula values(6);
+/*Taula Cambrer*/
+insert into cambrer values(1, 'Pepe', 'Gotera', '', 'pgotera', 'pgotera');
+/*Taula COmanda*/
+insert into comanda values(1, sysdate(), 1, 1); 
+/*Taula LiniaComanda*/
+insert into liniaComanda values(1, 1, 1, false, 1);
+
+select * from liniacomanda;

@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using MySQL_BD;
+using GestioCartaCuina.View;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0xc0a
 
@@ -26,6 +27,26 @@ namespace GestioCartaCuina
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void Option1Button_Checked(object sender, RoutedEventArgs e)
+        {
+            frmPrincipal.Navigate(typeof(GestioCarta), this); 
+        }
+
+        private void Option2Button_Checked(object sender, RoutedEventArgs e)
+        {
+            frmPrincipal.Navigate(typeof(GestioCuina), this);
+        }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationPane.IsPaneOpen = !NavigationPane.IsPaneOpen;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            frmPrincipal.Navigate(typeof(GestioCarta), this);
         }
 
     }
