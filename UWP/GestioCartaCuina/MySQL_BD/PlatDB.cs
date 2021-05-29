@@ -18,6 +18,7 @@ namespace MySQL_BD
         private int categoria;
         private String urlFoto;
         private ImageSource imatgeSource;
+        
 
         #region propietats
         public long Codi { get => codi; set => codi = value; }
@@ -42,6 +43,12 @@ namespace MySQL_BD
             this.foto = foto;
             this.disponible = disponible;
             this.categoria = categoria;
+        }
+
+        public PlatDB(long codi, String nom)
+        {
+            this.codi = codi;
+            this.nom = nom;
         }
 
         public PlatDB(long codi, String nom, String descripcioMD, double preu, String foto, bool disponible, int categoria)

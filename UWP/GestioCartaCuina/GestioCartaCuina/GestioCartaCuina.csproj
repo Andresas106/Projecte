@@ -119,6 +119,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ControlsPersonalitzats\ComandaUI.xaml.cs">
+      <DependentUpon>ComandaUI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ControlsPersonalitzats\PlatUI.xaml.cs">
       <DependentUpon>PlatUI.xaml</DependentUpon>
     </Compile>
@@ -153,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ControlsPersonalitzats\ComandaUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ControlsPersonalitzats\PlatUI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

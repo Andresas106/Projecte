@@ -273,3 +273,8 @@ C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaC
 C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\obj\x86\Debug\View\GestioCuina.g.cs
 C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\obj\x86\Debug\View\GestioCuina.xaml
 C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\obj\x86\Debug\View\GestioCuina.xbf
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\obj\x86\Debug\ControlsPersonalitzats\ComandaUI.g.i.cs
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\obj\x86\Debug\ControlsPersonalitzats\ComandaUI.g.cs
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\obj\x86\Debug\ControlsPersonalitzats\ComandaUI.xaml
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\obj\x86\Debug\ControlsPersonalitzats\ComandaUI.xbf
+C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\ControlsPersonalitzats\ComandaUI.xbf

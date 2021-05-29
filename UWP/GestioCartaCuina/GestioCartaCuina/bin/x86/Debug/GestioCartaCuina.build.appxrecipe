@@ -241,6 +241,9 @@
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\ControlsPersonalitzats\ComandaUI.xbf">
+      <PackagePath>ControlsPersonalitzats\ComandaUI.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\ControlsPersonalitzats\PlatUI.xbf">
       <PackagePath>ControlsPersonalitzats\PlatUI.xbf</PackagePath>
     </AppxPackagedFile>

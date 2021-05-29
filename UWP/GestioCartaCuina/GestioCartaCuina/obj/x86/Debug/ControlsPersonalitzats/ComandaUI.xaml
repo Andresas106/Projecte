@@ -1,0 +1,45 @@
+﻿<UserControl x:ConnectionId='1'
+    x:Class="GestioCartaCuina.ControlsPersonalitzats.ComandaUI"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GestioCartaCuina.ControlsPersonalitzats"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    x:Name="uiComanda">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="0 0 50 0" Width="300">
+            <StackPanel Orientation="Horizontal" Background="LightGreen">
+                <TextBlock Text="Table" FontSize="20"></TextBlock>
+                <TextBlock Text="{Binding ElementName=uiComanda, Path=comanda.Taula}" FontSize="20" Margin="10 0 0 0"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="LightGreen">
+                <TextBlock Text=""></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="LightGreen">
+                <TextBlock Text="{Binding ElementName=uiComanda, Path=comanda.Data.Hour}"></TextBlock>
+                <TextBlock Text=":"></TextBlock>
+                <TextBlock Text="{Binding ElementName=uiComanda, Path=comanda.Data.Minute}"></TextBlock>
+                <TextBlock Text="{Binding ElementName=uiComanda, Path=comanda.Cambrer}"
+                           Margin="25 0 0 0"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="LightGreen">
+                <TextBlock Text=""></TextBlock>
+            </StackPanel>
+            <ListView x:ConnectionId='2' x:Name="lstLiniesComanda" ItemsSource="{Binding ElementName=uiComanda, Path=comanda.Plats}" 
+                      Margin="0 15 0 0"                                             >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding NomPlat}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</UserControl>
+
