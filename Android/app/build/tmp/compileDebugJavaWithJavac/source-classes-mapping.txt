@@ -1,0 +1,11 @@
+com/example/appcambrer/MainActivity.java
+ com.example.appcambrer.MainActivity
+inofmila/info/Model/Cambrer.java
+ inofmila.info.Model.Cambrer
+com/example/appcambrer/LoginActivity.java
+ com.example.appcambrer.LoginActivity
+ com.example.appcambrer.LoginActivity$1
+com/example/appcambrer/TaulesActivity.java
+ com.example.appcambrer.TaulesActivity
+com/example/appcambrer/BuildConfig.java
+ com.example.appcambrer.BuildConfig
