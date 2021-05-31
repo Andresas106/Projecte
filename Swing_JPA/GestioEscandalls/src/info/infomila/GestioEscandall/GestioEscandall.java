@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package info.infomila.GestioEscandallHibernate;
+package info.infomila.GestioEscandall;
 
 import info.infomila.model.Categoria;
 import info.infomila.model.Ingredient;
@@ -165,14 +165,12 @@ public class GestioEscandall {
                                boolean isSelected, boolean cellHasFocus) {
                           Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
                                Plat plat = (Plat) value;
-                               String consulta = "select c from Categoria c join Plat p on p.categoria = c.codi"
-                                       + " where p.codi=:codi";
+                               String consulta = "select c from Categoria c join Plat p on p.categoria=c.codi where p.codi=:codi";
                                Query q = em.createQuery(consulta);
                                q.setParameter("codi", plat.getCodi());
                                List<Categoria> colors = q.getResultList();
                                Color color = convertirColorHexARGB(colors.get(0).getColor().toString());
                                c.setBackground(color);
-                          
                           return c;
                      }
             }); 
@@ -202,15 +200,15 @@ public class GestioEscandall {
             
             categoria = new JComboBox();
              
-            String consulta = "select nom from Categoria";
+            String consulta = "select c from Categoria c";
             Query q = em.createQuery(consulta);
-            List<String> categories = q.getResultList();
+            List<Categoria> categories = q.getResultList();
             
             categoria.addItem(""); 
             
             for(int i=0;i< categories.size();i++)
             {
-                categoria.addItem(categories.get(i));
+                categoria.addItem(categories.get(i).getNom());
             }
             JLabel titolCategoria = new JLabel("Categoria");
             esquerra.add(titolCategoria);
@@ -529,7 +527,7 @@ public class GestioEscandall {
                 }else if(eleccioCombo == "" && eleccioRadioButton != -1)
                 {
                     String consulta = "select p from Plat p"
-                        + " where  disponible=:disponible";
+                        + " where  p.disponible=:disponible";
                     Query q = em.createQuery(consulta);
                     q.setParameter("disponible", eleccioRadioButton); 
                     List<Plat> platsCerca = q.getResultList();
