@@ -16,7 +16,10 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+import java.net.InetAddress;
 import java.net.Socket;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 
 import inofmila.info.Model.Cambrer;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -27,10 +30,11 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private EditText edtUsername, edtPassword;
-    private Socket s;
+    public static Socket s;
     private Context c;
     private int resposta = -1;
     Cambrer cambrer;
+    long sesion_id = 0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +50,8 @@ public class LoginActivity extends AppCompatActivity {
             // Això és el codi que s'executarà en un fil
 
             try {
-                s = new Socket("192.168.1.31", 9876);
-            } catch (IOException e) {
+                s = new Socket("192.168.1.26", 15000);
+            } catch (IOException  e) {
                 e.printStackTrace();
             }
             return true;
@@ -99,6 +103,9 @@ public class LoginActivity extends AppCompatActivity {
                                 }else if(resposta == 1)
                                 {
                                     dis = new DataInputStream(s.getInputStream());
+                                     sesion_id = dis.readLong();
+
+                                    dis = new DataInputStream(s.getInputStream());
                                     long codi = dis.readLong();
 
                                     dis = new DataInputStream(s.getInputStream());
@@ -117,7 +124,6 @@ public class LoginActivity extends AppCompatActivity {
                                     String passw = dis.readUTF();
 
                                     cambrer = new Cambrer(codi, nom, cognom1, cognom2, usuari, passw);
-
                                 }
                             }
                         }
@@ -149,12 +155,7 @@ public class LoginActivity extends AppCompatActivity {
                             }else
                             {
                                 Intent i = new Intent(c, TaulesActivity.class);
-                                i.putExtra(TaulesActivity.CODI, cambrer.getCodi());
-                                i.putExtra(TaulesActivity.NOM, cambrer.getNom());
-                                i.putExtra(TaulesActivity.COGNOM1, cambrer.getCognom1());
-                                i.putExtra(TaulesActivity.COGNOM2, cambrer.getCognom2());
-                                i.putExtra(TaulesActivity.USER, cambrer.getUsuari());
-                                i.putExtra(TaulesActivity.PASSWD, cambrer.getPassw());
+                                i.putExtra(TaulesActivity.CODI, sesion_id);
                                 startActivity(i);
                             }
 
