@@ -33,6 +33,13 @@
            Checked="Option2Button_Checked"
            Content="Cuina"
            />
+                        <RadioButton x:Name="Option3"
+           GroupName="Group1"
+           Style="{StaticResource NavigationButtonStyle}"
+           Tag="&#xF83E;"
+           Checked="Option3_Checked"
+           Content="Informe"
+           />
                     </StackPanel>
 
                 </Grid>

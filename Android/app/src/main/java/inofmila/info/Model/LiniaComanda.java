@@ -8,10 +8,10 @@ public class LiniaComanda {
     private float preu;
 
 
-    public LiniaComanda(int numero, int quantitat, long codiComanda, String nomPlat, float preu) {
+    public LiniaComanda(int numero, int quantitat, long codiPlat, String nomPlat, float preu) {
         this.numero = numero;
         this.quantitat = quantitat;
-        this.codiPlat = codiComanda;
+        this.codiPlat = codiPlat;
         this.nomPlat = nomPlat;
         this.preu = preu;
     }

@@ -33,6 +33,13 @@
                                           
            Content="Cuina"
            />
+                        <RadioButton x:ConnectionId='7' x:Name="Option3"
+           GroupName="Group1"
+           Style="{StaticResource NavigationButtonStyle}"
+           Tag="&#xF83E;"
+                                    
+           Content="Informe"
+           />
                     </StackPanel>
 
                 </Grid>
@@ -40,7 +47,7 @@
             </SplitView.Pane>
             <SplitView.Content>
 
-                <Frame x:ConnectionId='7' x:Name="frmPrincipal">
+                <Frame x:ConnectionId='8' x:Name="frmPrincipal">
                 </Frame>
 
             </SplitView.Content>

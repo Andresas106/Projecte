@@ -65,7 +65,7 @@ namespace GestioCartaCuina.View
                 {
                     lstComandes.ItemsSource = comandes;
                 });
-                Thread.Sleep(2000);
+                Thread.Sleep(5000);
             }
         }
 

@@ -60,7 +60,6 @@ public class Server extends Thread {
                 Socket s = server.accept(); 
                 Server th = new Server(s);
                 sesID = (long) (Math.random()*(1000000-100000+1)+100000);
-                
                 th.start();
                 
             }
@@ -117,7 +116,7 @@ public class Server extends Thread {
                         GetComanda(dis, st, rs, con);
                     break;
                     case 5:
-
+                        CreateComanda(dis, st, rs, con);
                     break;
                     case 6:
                         BuidarTaula(dis, st, rs, con);
@@ -243,7 +242,8 @@ public class Server extends Thread {
 "(select count(*) from liniacomanda lc where lc.comanda = c.codi and lc.preparat=true) as PlatsPreparats,\n" +
 " (select count(*) from liniacomanda lc where lc.comanda = c.codi and lc.preparat=false) as PlatsPendents\n" +
 " from taula t left join comanda c\n" +
-"on t.numero = c.taula left join cambrer cam on cam.codi = c.cambrer";
+"on t.numero = c.taula left join cambrer cam on cam.codi = c.cambrer"
+                + " order by t.numero asc";
         Cambrer cam = null;
         
         dis = new DataInputStream(s.getInputStream());
@@ -554,8 +554,66 @@ public class Server extends Thread {
         }
     }
     
-    private void CreateComanda()
+    private void CreateComanda(DataInputStream dis, PreparedStatement st, ResultSet rs, Connection con) throws IOException, SQLException
     {
+        String consulta1 = "insert into comanda(codi, data, cambrer, taula) values(?, sysdate(), ?, ?)";
+        String consulta2 = "insert into liniacomanda(comanda, num, quantitat, preparat, item) values(?, ?, ?, false, ?)";
         
+        dis = new DataInputStream(s.getInputStream());
+        long sesion_id = dis.readLong();
+        if(sessions_ids.containsKey(sesion_id))
+        {
+            dis = new DataInputStream(s.getInputStream());
+            int taula = dis.readInt();
+            
+            dis = new DataInputStream(s.getInputStream());
+            long cambrer = dis.readLong();
+            
+            st = con.prepareStatement(consulta1);
+            
+            st.setInt(1, taula);
+            st.setLong(2, cambrer);
+            st.setInt(3, taula);
+            
+            st.executeUpdate();
+            
+            dis = new DataInputStream(s.getInputStream());
+            int numLinies = dis.readInt();
+            
+            DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+            dos.writeInt(0);
+            
+            for(int i=0;i<numLinies;i++)
+            {
+                dis = new DataInputStream(s.getInputStream());
+                int numero = dis.readInt();
+                
+                dos = new DataOutputStream(s.getOutputStream());
+                dos.writeInt(0);
+                
+                dis = new DataInputStream(s.getInputStream());
+                int quantitat = dis.readInt();
+                
+                dos = new DataOutputStream(s.getOutputStream());
+                dos.writeInt(0);
+                
+                
+                dis = new DataInputStream(s.getInputStream());
+                long plat = dis.readLong();
+                
+                dos = new DataOutputStream(s.getOutputStream());
+                dos.writeInt(0);
+                
+                st = con.prepareStatement(consulta2);
+
+                st.setInt(1, taula);
+                st.setInt(2, numero);
+                st.setInt(3, quantitat);
+                st.setLong(4, plat);
+
+                st.executeUpdate();
+                
+            }
+        }
     }
 }

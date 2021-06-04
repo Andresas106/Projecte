@@ -127,7 +127,7 @@ namespace MySQL_BD
                             DBUtils.crearParametre(consulta, "codi", System.Data.DbType.Int32, codi);
                             // B) llançar la consulta
                             var r = consulta.ExecuteScalar();
-                            numeroBytes = (Int32)r;
+                            numeroBytes = (Int32)((long)r);
                         }
                     }
                 }

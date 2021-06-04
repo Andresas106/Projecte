@@ -5,9 +5,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,16 +32,21 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class ComandaActivity extends AppCompatActivity implements SelectedItemListenerCategoria {
 
     public static final String CODI = "codi";
+    public static final String TAULA = "taula";
+    public static final String CAMBRER = "cambrer";
 
     RecyclerView rcvCategories, rcvPlats, rcvLiniesComanda;
     Socket s = null;
     List<Categoria> categories = new ArrayList<>();
     List<Plat> plats = new ArrayList<>();
-    List<LiniaComanda> linies = new ArrayList<>();
+    public static List<LiniaComanda> linies = new ArrayList<>();
     CategoriesAdapter categoryAdapter;
     PlatsAdapter platsAdapter;
     LiniaComandaAdapter liniesAdapter;
     long codiComanda;
+    int taula;
+    long cambrer;
+    Context c;
 
     TextView txvTotal;
     Button btnConfirmar;
@@ -47,6 +55,9 @@ public class ComandaActivity extends AppCompatActivity implements SelectedItemLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comanda);
 
+
+        c = getApplicationContext();
+        linies = new ArrayList<>();
         txvTotal = findViewById(R.id.txvPreuTotal);
         btnConfirmar = findViewById(R.id.btnConfirmar);
         this.s = LoginActivity.s;
@@ -56,6 +67,78 @@ public class ComandaActivity extends AppCompatActivity implements SelectedItemLi
 
         Intent intent = getIntent();
         codiComanda = intent.getLongExtra(CODI, 0);
+        taula = intent.getIntExtra(TAULA, 0);
+        cambrer = intent.getLongExtra(CAMBRER, 0);
+
+        btnConfirmar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Observable.fromCallable(() -> {
+                    //---------------- START OF THREAD ------------------------------------
+                    // Això és el codi que s'executarà en un fil
+                    int opcio = 5;
+                     DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+                     dos.writeInt(opcio);
+
+                     Thread.sleep(150);
+
+                    dos = new DataOutputStream(s.getOutputStream());
+                    dos.writeLong(TaulesActivity.sesion_id);
+
+                    Thread.sleep(150);
+
+                    dos = new DataOutputStream(s.getOutputStream());
+                    dos.writeInt(taula);
+
+                    Thread.sleep(150);
+
+                    dos = new DataOutputStream(s.getOutputStream());
+                    dos.writeLong(cambrer);
+
+                    Thread.sleep(150);
+
+                    dos = new DataOutputStream(s.getOutputStream());
+                    dos.writeInt(linies.size());
+
+                    DataInputStream dis = new DataInputStream(s.getInputStream());
+                    dis.readInt();
+
+                    for(int i=0;i<linies.size();i++)
+                    {
+                        dos = new DataOutputStream(s.getOutputStream());
+                        dos.writeInt(linies.get(i).getNumero());
+
+                        dis = new DataInputStream(s.getInputStream());
+                        dis.readInt();
+
+                        dos = new DataOutputStream(s.getOutputStream());
+                        dos.writeInt(linies.get(i).getQuantitat());
+
+                        dis = new DataInputStream(s.getInputStream());
+                        dis.readInt();
+
+                        dos = new DataOutputStream(s.getOutputStream());
+                        dos.writeLong(linies.get(i).getCodiPlat());
+
+                        dis = new DataInputStream(s.getInputStream());
+                        dis.readInt();
+                    }
+
+                    return true;
+                    //--------------- END OF THREAD-------------------------------------
+                })
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe((retornInutil) -> {
+                            //-------------  UI THREAD ---------------------------------------
+                            // El codi que tenim aquí s'executa només quan el fil
+                            // ha acabat !! A més, aquest codi s'executa en el fil
+                            // d'interfície gràfica.
+                            //-------------  END OF UI THREAD ---------------------------------------
+                        });
+            }
+        });
+
 
         Observable.fromCallable(() -> {
             //---------------- START OF THREAD ------------------------------------
@@ -147,12 +230,7 @@ public class ComandaActivity extends AppCompatActivity implements SelectedItemLi
                 plats.add(p);
             }
 
-            if(codiComanda == -1)
-            {
-                //create comanda
-
-            }
-            else
+            if(codiComanda != -1)
             {
                 //get comanda
                 opcio = 4;
@@ -232,13 +310,14 @@ public class ComandaActivity extends AppCompatActivity implements SelectedItemLi
 
                     manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
                     rcvPlats.setLayoutManager(manager);
-                    platsAdapter = new PlatsAdapter(plats);
+                    platsAdapter = new PlatsAdapter(plats, taula, liniesAdapter, rcvLiniesComanda, this);
                     rcvPlats.setAdapter(platsAdapter);
 
                     manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
                     rcvLiniesComanda.setLayoutManager(manager);
                     liniesAdapter = new LiniaComandaAdapter(linies);
                     rcvLiniesComanda.setAdapter(liniesAdapter);
+
                     float totalPrice = 0;
                     for(int i=0;i<linies.size();i++)
                     {
@@ -274,7 +353,7 @@ public class ComandaActivity extends AppCompatActivity implements SelectedItemLi
         }
         LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rcvPlats.setLayoutManager(manager);
-        platsAdapter = new PlatsAdapter(platsXCategoria);
+        platsAdapter = new PlatsAdapter(platsXCategoria, taula, liniesAdapter, rcvLiniesComanda, this);
         rcvPlats.setAdapter(platsAdapter);
     }
 }

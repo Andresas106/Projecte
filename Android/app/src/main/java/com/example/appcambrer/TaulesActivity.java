@@ -31,18 +31,110 @@ public class TaulesActivity extends AppCompatActivity implements SelectedItemLis
 
 
     public static final String CODI = "Codi";
-    public static final String NOM = "Nom";
-    public static final String COGNOM1 = "Cognom1";
-    public static final String COGNOM2 = "Cognom2";
-    public static final String USER = "User";
-    public static final String PASSWD = "Passw";
-
+    public static final String CODICAMBRER = "Cambrrer";
     Socket s = null;
     RecyclerView rcvTaules;
     TaulesAdapter adapter;
     public static long sesion_id;
-    List<Taula> taules = new ArrayList<>();
+    List<Taula> taules;
+    boolean firstStart = true;
+    long cambrer;
     Context c;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(firstStart)
+        {
+            firstStart = false;
+        }
+        else
+        {
+            taules = new ArrayList<>();
+            Observable.fromCallable(() -> {
+                //---------------- START OF THREAD ------------------------------------
+                // Això és el codi que s'executarà en un fil
+                int opcio = 2;
+                DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+                dos.writeInt(opcio);
+
+                Thread.sleep(100);
+                dos = new DataOutputStream(s.getOutputStream());
+                dos.writeLong(sesion_id);
+
+                DataInputStream dis = new DataInputStream(s.getInputStream());
+                int numTaules = dis.readInt();
+
+                for(int j=0;j< numTaules;j++)
+                {
+                    //rebem numero de taula
+                    dis = new DataInputStream(s.getInputStream());
+                    int numero = dis.readInt();
+
+                    dos = new DataOutputStream(s.getOutputStream());
+                    dos.writeInt(0);
+
+                    //rebem codi de comanda
+                    dis = new DataInputStream(s.getInputStream());
+                    long codi = dis.readLong();
+
+                    dos = new DataOutputStream(s.getOutputStream());
+                    dos.writeInt(0);
+
+                    //rebem nom de cambrer
+                    dis = new DataInputStream(s.getInputStream());
+                    String nom = dis.readUTF();
+
+                    dos = new DataOutputStream(s.getOutputStream());
+                    dos.writeInt(0);
+
+                    //Rebem numPlats
+                    dis = new DataInputStream(s.getInputStream());
+                    int numPlats = dis.readInt();
+
+                    dos = new DataOutputStream(s.getOutputStream());
+                    dos.writeInt(0);
+
+                    //rebem num platsPreparats
+                    dis = new DataInputStream(s.getInputStream());
+                    int platsPreparats = dis.readInt();
+
+                    dos = new DataOutputStream(s.getOutputStream());
+                    dos.writeInt(0);
+
+                    //rebem platsPendents
+                    dis = new DataInputStream(s.getInputStream());
+                    int platsPendents = dis.readInt();
+
+                    dos = new DataOutputStream(s.getOutputStream());
+                    dos.writeInt(0);
+
+                    //rebem es_meva
+                    dis = new DataInputStream(s.getInputStream());
+                    boolean es_meva = dis.readBoolean();
+
+                    Taula t = new Taula(numero, codi, nom, numPlats, platsPreparats, platsPendents, es_meva);
+                    taules.add(t);
+                }
+
+                return true;
+                //--------------- END OF THREAD-------------------------------------
+            })
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe((retornInutil) -> {
+                        //-------------  UI THREAD ---------------------------------------
+                        // El codi que tenim aquí s'executa només quan el fil
+                        // ha acabat !! A més, aquest codi s'executa en el fil
+                        // d'interfície gràfica.
+                        rcvTaules.setLayoutManager(new GridLayoutManager(this, 3));
+                        adapter = new TaulesAdapter(taules, this);
+                        rcvTaules.setAdapter(adapter);
+                        //-------------  END OF UI THREAD ---------------------------------------
+                    });
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +142,11 @@ public class TaulesActivity extends AppCompatActivity implements SelectedItemLis
 
         rcvTaules = findViewById(R.id.rcvTaules);
 
+        taules = new ArrayList<>();
+
         Intent i = getIntent();
         sesion_id = i.getLongExtra(CODI, 0);
+        cambrer = i.getLongExtra(CODICAMBRER, 0);
         s = LoginActivity.s;
         //Cambrer c = new Cambrer(codi, nom, cognom1, cognom2, user, passwd);
 
@@ -62,7 +157,7 @@ public class TaulesActivity extends AppCompatActivity implements SelectedItemLis
             DataOutputStream dos = new DataOutputStream(s.getOutputStream());
             dos.writeInt(opcio);
 
-            Thread.sleep(100); 
+            Thread.sleep(100);
             dos = new DataOutputStream(s.getOutputStream());
             dos.writeLong(sesion_id);
 
@@ -144,6 +239,8 @@ public class TaulesActivity extends AppCompatActivity implements SelectedItemLis
     public void onSelectedItem(Taula t) {
         Intent i = new Intent(this, ComandaActivity.class);
         i.putExtra(ComandaActivity.CODI, t.getCodi());
+        i.putExtra(ComandaActivity.TAULA, t.getNumero());
+        i.putExtra(ComandaActivity.CAMBRER, cambrer);
         startActivity(i);
     }
 

@@ -6,44 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".ComandaActivity"
     android:orientation="horizontal">
-
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/black">
+            android:background="@color/black"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total"
-                android:textSize="30dp"
-                android:textColor="@color/white"></TextView>
+                android:textColor="@color/white"
+                android:textSize="30dp"></TextView>
+
             <TextView
                 android:id="@+id/txvPreuTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
                 android:layout_gravity="right"
                 android:layout_marginLeft="175dp"
+                android:textColor="@color/white"
                 android:textSize="30dp"></TextView>
         </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvLiniesComanda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
         <Button
             android:id="@+id/btnConfirmar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Confirmar"
             android:layout_marginTop="15dp"
             android:backgroundTint="@color/black"
-            android:enabled="false"></Button>
+            android:enabled="false"
+            android:text="Confirmar"></Button>
     </LinearLayout>
+</ScrollView>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

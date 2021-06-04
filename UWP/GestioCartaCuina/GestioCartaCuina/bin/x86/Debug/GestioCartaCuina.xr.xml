@@ -215,5 +215,7 @@
       <RootProperty Name="Orientation" />
     </RootType>
     <RootType FullName="GestioCartaCuina.View.GestioCuina" />
+    <RootType FullName="Windows.UI.Xaml.Controls.WebView" />
+    <RootType FullName="GestioCartaCuina.View.InformeCarta" />
   </Roots.RootTypes>
 </Roots>

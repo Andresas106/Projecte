@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportCarta" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ebeee9f9-c670-4937-a543-288418e0c6ea">
+	<property name="ireport.zoom" value="1.4641000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.jasperserver.reportUnit" value="/dam2-averdes/JasperProjecte/ReportCarta"/>
+	<property name="ireport.jasperserver.url" value="http://51.68.224.27:8080/jasperserver/services/repository"/>
+	<subDataset name="New Dataset 1" uuid="c3a6edf9-db64-43b2-8f5f-1a23d9193e13">
+		<queryString language="SQL">
+			<![CDATA[select lp.num, lp.quantitat, i.nom as "NomIngredient", u.nom as "NomUnitat" from liniaescandall lp  join ingredient i on i.codi = lp.ingredient
+join unitat u on u.codi = lp.unitat]]>
+		</queryString>
+		<field name="num" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="quantitat" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="NomIngredient" class="java.lang.String"/>
+		<field name="NomUnitat" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="P_CATEGORIA" class="java.lang.Integer"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\averd\\OneDrive\\Escritorio\\ProjecteDAM\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select p.codi, p.nom, p.descripcioMD, p.preu, p.disponible, p.categoria from plat p where p.categoria is not null or p.categoria=$P{P_CATEGORIA}]]>
+	</queryString>
+	<field name="codi" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nom" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcioMD" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="preu" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="disponible" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="categoria" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="cdbeede6-dbf5-457f-8148-822485d9a6e3" x="223" y="27" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Carta]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="68a81517-8d9d-4245-b4a0-35dbe5180570" x="0" y="40" width="55" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[codi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5513f08f-7463-4952-b262-ecb791f60458" x="55" y="40" width="69" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[nom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7fa1475a-8e97-42c0-9777-f21a829d2ce9" x="124" y="40" width="266" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[descripcioMD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="08d2b49c-ffb9-4651-8d66-6ce4951a16a4" x="390" y="40" width="52" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[preu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="89be0d34-aeff-435b-8c2a-93a470a865ff" x="442" y="40" width="57" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[disponible]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e8d62a84-d61d-4797-a402-599b24162dd0" x="499" y="40" width="56" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[categoria]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="eee521f1-82f1-4247-9285-239bad18a06e" x="0" y="59" width="555" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="186" splitType="Stretch">
+			<textField>
+				<reportElement uuid="165939d7-d4e1-4303-a4ac-8a9b8e034857" x="0" y="0" width="55" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{codi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="580000b6-0a50-45bb-b756-4a17b6a37d4e" x="55" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="14157561-d58d-4348-95a8-1614c3ee0b11" x="124" y="0" width="266" height="46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{descripcioMD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7b10ee49-0ab9-4fd1-878d-6d7f49ead1ea" x="390" y="0" width="52" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{preu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e610dece-31e9-414b-bac4-41754cf5c589" x="442" y="0" width="57" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{disponible}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7db9f1bc-6d3f-4b26-bc28-ad85bf04a7a1" x="499" y="0" width="56" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{categoria}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="31808be6-6380-4c8d-87cd-4bb7fa1a16a8" x="0" y="67" width="555" height="100"/>
+				<subreportParameter name="P_PLAT">
+					<subreportParameterExpression><![CDATA[$F{codi}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["repo:ReportCarta_subreport.jrxml"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement uuid="e8e328ce-d55c-493c-8e8c-6019cd46a0e7" x="0" y="185" width="555" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="50">
+			<textField>
+				<reportElement uuid="fbe87e5f-e639-468a-a4b5-e906e6973841" x="442" y="30" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="72e1a570-6365-400d-b912-4aaf625d3a8f" x="522" y="30" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement uuid="0c545fd8-517e-4d57-9708-b47e1eeeb05f" x="0" y="30" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

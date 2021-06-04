@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportCarta_subreport" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7f16dcc7-cbde-4bb5-a4bf-08139321c535">
+	<property name="ireport.zoom" value="1.610510000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="P_PLAT" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select lp.num, lp.quantitat, i.nom as "NomIngredient", u.nom as "NomUnitat" from liniaescandall lp  join ingredient i on i.codi = lp.ingredient
+join unitat u on u.codi = lp.unitat
+where lp.plat = $P{P_PLAT}]]>
+	</queryString>
+	<field name="num" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quantitat" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NomIngredient" class="java.lang.String"/>
+	<field name="NomUnitat" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="ab53ccdf-9b06-4d51-ae35-2cac01bc6c4d" x="197" y="16" width="129" height="48"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Escandall Plat]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="bdd51d30-e0cb-4e6d-9905-57d54ddedf10" mode="Transparent" x="0" y="0" width="138" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[num]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d07946ad-380e-43ab-b00f-7b505a6a2f85" mode="Transparent" x="138" y="0" width="138" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[quantitat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4699477d-f71b-409d-a66e-8489a5090a76" mode="Transparent" x="276" y="0" width="138" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NomIngredient]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fdb6cbb4-6ff1-4b5a-b888-67b8d894926d" mode="Transparent" x="414" y="0" width="138" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NomUnitat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="8a3301ac-dff0-454b-86f8-40cd2c94458e" x="0" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{num}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c9f76870-f3b4-4497-aec5-1f7ca9962b70" x="138" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{quantitat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="34fc7a7f-45ee-4e33-ba15-f81efbabeb44" x="276" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{NomIngredient}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7d49e031-dfa6-4ad0-974b-23ac1829990a" x="414" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{NomUnitat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>04717E01A16938EA5367F7EA6538B50BB36846BB9C6EF438FBF243589D6BE253</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>12746F5EC689C6654DF9B2DC8D78C6148BCD2B5F46FB6B23305A9C644DC3433D</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>5bab4b9b-e6cd-4887-8acc-fae1a3806a16_1.0.0.0_x86__c3yes314ep0e8</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>5bab4b9b-e6cd-4887-8acc-fae1a3806a16_c3yes314ep0e8!App</RegisteredUserModeAppID>
     <RegisteredPackageID>5bab4b9b-e6cd-4887-8acc-fae1a3806a16</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-05-29T01:08:16.191</Modified>
+      <Modified>2021-06-04T00:28:39.258</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\GestioCartaCuina.exe">
       <PackagePath>entrypoint\GestioCartaCuina.exe</PackagePath>
-      <Modified>2021-05-29T01:08:09.752</Modified>
+      <Modified>2021-06-04T00:28:22.527</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
@@ -240,7 +240,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\MySQL_BD\bin\Debug\netstandard2.0\MySQL_BD.dll">
       <PackagePath>MySQL_BD.dll</PackagePath>
-      <Modified>2021-05-29T00:51:04.129</Modified>
+      <Modified>2021-06-03T20:43:39.884</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\.nuget\packages\win2d.uwp\1.25.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -276,73 +276,77 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2021-05-26T19:45:10.863</Modified>
+      <Modified>2021-05-31T10:38:07.522</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2020-09-22T15:31:57.453</Modified>
+      <Modified>2021-05-31T10:38:07.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-09-22T15:31:57.460</Modified>
+      <Modified>2021-05-31T10:38:07.485</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-09-22T15:31:57.461</Modified>
+      <Modified>2021-05-31T10:38:07.486</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-09-22T15:31:57.462</Modified>
+      <Modified>2021-05-31T10:38:07.487</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-09-22T15:31:57.464</Modified>
+      <Modified>2021-05-31T10:38:07.487</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-09-22T15:31:57.465</Modified>
+      <Modified>2021-05-31T10:38:07.488</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-09-22T15:31:57.467</Modified>
+      <Modified>2021-05-31T10:38:07.489</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\GestioCartaCuina.xr.xml">
       <PackagePath>GestioCartaCuina.xr.xml</PackagePath>
-      <Modified>2021-05-28T20:06:57.013</Modified>
+      <Modified>2021-06-04T00:28:21.860</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-05-29T01:08:09.444</Modified>
+      <Modified>2021-06-04T00:28:21.999</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\ControlsPersonalitzats\ComandaUI.xbf">
       <PackagePath>ControlsPersonalitzats\ComandaUI.xbf</PackagePath>
-      <Modified>2021-05-29T01:08:09.444</Modified>
+      <Modified>2021-06-04T00:28:22.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\ControlsPersonalitzats\PlatUI.xbf">
       <PackagePath>ControlsPersonalitzats\PlatUI.xbf</PackagePath>
-      <Modified>2021-05-29T01:08:09.444</Modified>
+      <Modified>2021-06-04T00:28:22.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-05-29T01:08:09.445</Modified>
+      <Modified>2021-06-04T00:28:22.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\Themes\Generic.xbf">
       <PackagePath>Themes\Generic.xbf</PackagePath>
-      <Modified>2021-05-29T01:08:09.444</Modified>
+      <Modified>2021-06-04T00:28:21.999</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\View\GestioCarta.xbf">
       <PackagePath>View\GestioCarta.xbf</PackagePath>
-      <Modified>2021-05-29T01:08:09.445</Modified>
+      <Modified>2021-06-04T00:28:22.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\View\GestioCuina.xbf">
       <PackagePath>View\GestioCuina.xbf</PackagePath>
-      <Modified>2021-05-29T01:08:09.445</Modified>
+      <Modified>2021-06-04T00:28:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\View\InformeCarta.xbf">
+      <PackagePath>View\InformeCarta.xbf</PackagePath>
+      <Modified>2021-06-04T00:28:22.001</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -358,11 +362,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-05-28T13:51:38.899</Modified>
+      <Modified>2021-06-04T00:28:29.416</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\averd\OneDrive\Escritorio\ProjecteDAM\UWP\GestioCartaCuina\GestioCartaCuina\bin\x86\Debug\Core\GestioCartaCuina.exe">
       <PackagePath>GestioCartaCuina.exe</PackagePath>
-      <Modified>2021-05-29T01:08:16.173</Modified>
+      <Modified>2021-06-04T00:28:39.251</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

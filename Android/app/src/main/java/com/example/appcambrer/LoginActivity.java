@@ -156,6 +156,7 @@ public class LoginActivity extends AppCompatActivity {
                             {
                                 Intent i = new Intent(c, TaulesActivity.class);
                                 i.putExtra(TaulesActivity.CODI, sesion_id);
+                                i.putExtra(TaulesActivity.CODICAMBRER, cambrer.getCodi());
                                 startActivity(i);
                             }
 

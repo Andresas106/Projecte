@@ -49,5 +49,9 @@ namespace GestioCartaCuina
             frmPrincipal.Navigate(typeof(GestioCarta), this);
         }
 
+        private void Option3_Checked(object sender, RoutedEventArgs e)
+        {
+            frmPrincipal.Navigate(typeof(InformeCarta), this);
+        }
     }
 }
